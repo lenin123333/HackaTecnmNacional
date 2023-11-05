@@ -1,0 +1,238 @@
+{% extends "TeleMindCareHome/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+<main class="contenedor-nosotros">
+    <div class="header-overlay"></div>
+    <div class="textos">
+        <h1 class="  nombre">TeleMindCare</h1>
+        <h3 class=" animate__delay-2s ">"Juntos en cada pensamiento"</h3>
+    </div>
+</main>
+
+
+
+
+
+<section class="main">
+    <section class="acerca-de" id="acerca-de">
+        <div class="contenedor">
+            <div class="foto"><img src="{% static 'TeleMindCareHome/img/acerca-de.jpg' %}" alt=""></div>
+        </div>
+        <article>
+            <h3>acerca de</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium earum in voluptas beatae ab
+                consequuntur exercitationem a, totam,
+                explicabo soluta corrupti maxime expedita fugit, praesentium sint molestias harum doloribus. Explicabo.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deserunt, vel. Eveniet incidunt nemo quidem eos illum officia recusandae id iste earum.</p>
+        </article>
+    </section>
+
+
+    <section class="contacto">
+
+        <div class="carrusel-control">
+            <button id="scrollLeft"><</button>
+            <div class="carrusel-padre">
+                <div class="carrusel-hijo">
+                    <center>
+                        <img 
+                        src="{% static 'TeleMindCareHome/img/speakers/06c3972d0b88f5ef25707058e884fc66.png'  %}" alt="">
+                    </center>
+                <h1>Dr. Laura Rodriguez</h1>
+                  <h2>No de cédula: 1234567</h2>
+                  <ul>
+                    <li>Profesión: Psicóloga Clínica</li>
+                    <li>Sobre mí: Soy un psicólogo con más de 10 años de experiencia en terapia individual y de pareja. Mi enfoque terapéutico se centra en la terapia cognitivo-conductual.</li>
+                    <li>Especialidades: 
+                        <ul class="lista">
+                            <li>Depresión</li>
+                            <li>Ansiedad</li>
+                            <li>Terapia de pareja</li>
+                        </ul>
+                    </li>
+                  </ul>
+                  <a class="mostrarPerfil">Mostrar perfil</a>
+                </div>
+              
+                <div class="carrusel-hijo">
+                    <center>
+                        <img src="{% static 'TeleMindCareHome/img/speakers/0ce9a8963fdd9ddb8514c7b2c08cc4e7.png'  %}" alt="">
+                    </center>
+                  <h1>Dr. Carlos García</h1>
+                  <h2>No de cédula: 7654321</h2>
+                  <ul>
+                    <li>Profesión: Psicóloga Clínica</li>
+                    <li>Sobre mí: Como psicóloga clínica, mi objetivo es proporcionar un entorno seguro y de apoyo para que mis pacientes exploren sus pensamientos y emociones.</li>
+                    <li>Especialidades: 
+                        <ul class="lista">
+                            <li>Estrés</li>
+                            <li>Terapia de grupo</li>
+                            <li>Terapia infantil</li>
+                        </ul>
+                        </li>
+                  </ul>
+                      <a class="mostrarPerfil">Mostrar perfil</a>
+                </div>
+              
+                <div class="carrusel-hijo">
+                    <center>
+                        <img src="{% static 'TeleMindCareHome/img/speakers/e481bca0c512f5b4d8f76ccea2548f0d.png'  %}" alt="">
+                    </center>
+                  <h1>Dr. Juan Pérez</h1>
+                  <h2>No de cédula: 9876543</h2>
+                  <ul>
+                    <li>Profesión: Psicólogo Clínico</li>
+                    <li>Sobre mí: Mi enfoque terapéutico se basa en la terapia de aceptación y compromiso. Creo en la importancia de vivir una vida con significado y valores personales.</li>
+                    <li>Especialidades: 
+                        <ul class="lista">
+                            <li>Ansiedad social</li>
+                            <li>Terapia de aceptación y compromiso</li>
+                        </ul>
+                        </li>
+                  </ul>
+                      <a class="mostrarPerfil">Mostrar perfil</a>
+                </div>
+              
+                <div class="carrusel-hijo">
+                    <center>
+                        <img src="{% static 'TeleMindCareHome/img/speakers/414ffd61380bbf0e9f45cbde4d0cbb7f.png'  %}" alt="">
+                    </center>
+                  <h1>Dra. María López</h1>
+                  <h2>No de cédula: 5678901</h2>
+                  <ul>
+                    <li>Profesión: Psicóloga Clínica</li>
+                    <li>Sobre mí: Me especializo en terapia de pareja y terapia familiar. Mi objetivo es ayudar a las parejas a construir relaciones saludables y satisfactorias.</li>
+                    <li>Especialidades: 
+                        <ul class="lista">
+                            <li>Terapia de pareja</li>
+                            <li>Terapia familiar</li>
+                        </ul>
+                        </li>
+                  </ul>
+                      <a class="mostrarPerfil">Mostrar perfil</a>
+                </div>
+              
+                <div class= "carrusel-hijo">
+                    <center>
+                        <img src="{% static 'TeleMindCareHome/img/speakers/6eac63d88743bbb9ee0bfd8c60cf4186.png'  %}" alt="">
+                    </center>
+                  <h1>Dra. Isabel Ramírez</h1>
+                  <h2>No de cédula: 2345678</h2>
+                  <ul>
+                    <li>Profesión: Psicólogo Clínico</li>
+                    <li>Sobre mí: Como psicólogo clínico, me especializo en el tratamiento de la depresión y la ansiedad. Mi enfoque terapéutico se basa en la terapia cognitivo-conductual.</li>
+                    <li>Especialidades: 
+                        <ul class="lista">
+                            <li>Depresión</li>
+                            <li>Ansiedad</li>
+                            <li>Terapia individual</li>
+                        </ul>
+                        </li>
+                  </ul>
+                      <a class="mostrarPerfil">Mostrar perfil</a>
+                </div>
+              
+                <div class="carrusel-hijo">
+                    <center>
+                        <img src="{% static 'TeleMindCareHome/img/speakers/d697f6c454c36252d70abacd7599566c.png'  %}" alt="">
+                    </center>
+                  <h1>Dra. Juanita Fernández</h1>
+                  <h2>No de cédula: 3456789</h2>
+                  <ul>
+                    <li>Profesión: Psicóloga Clínica</li>
+                    <li>Sobre mí: Mi enfoque terapéutico se centra en la terapia de juego para niños y terapia de arte para adultos. Creo en la importancia de la expresión creativa en el proceso terapéutico.</li>
+                    <li>Especialidades: 
+                        <ul class="lista">
+                            <li>Terapia de juego</li>
+                            <li>Terapia de arte</li>
+                        </ul>
+                        </li>
+                  </ul>
+                      <a class="mostrarPerfil">Mostrar perfil</a>
+                </div>
+              
+                <div class="carrusel-hijo">
+                    <center>
+                        <img src="{% static 'TeleMindCareHome/img/speakers/e6c4a55fe5d3bf482e6cd9d1bcbf756d.png'  %}" alt="">
+                    </center>
+                  <h1>Dr. Luis Torres</h1>
+                  <h2>No de cédula: 4567890</h2>
+                  <ul>
+                    <li>Profesión: Psicólogo Clínico</li>
+                    <li>Sobre mí: Como psicólogo clínico, me especializo en la terapia de exposición para tratar trastornos de ansiedad. Ayudo a mis pacientes a superar sus miedos y preocupaciones.</li>
+                    <li>Especialidades: 
+                        <ul class="lista">
+                            <li>Terapia de exposición</li>
+                            <li>Trastornos de ansiedad</li>
+                        </ul>
+                        </li>
+                  </ul>
+                      <a class="mostrarPerfil">Mostrar perfil</a>
+                </div>
+              </div>
+            
+        <button id="scrollRight">></button>
+        </div>
+
+
+
+        <div>
+            <h3>¿ERES UN PROFESIONAL DE LA SALUD MENTAL?</h3>
+        </div>
+        
+       
+        <div class="contenedor_formulario">
+
+            <form action="" class="formulario">
+                <h3 class="titulo">Unete a nuestro equipo de expertos</h3>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" placeholder="Ingresa tu Nombre" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico:</label>
+                        <input placeholder="Ingresa tu correo Ej:correo@correo.com" type="email" id="correo" name="correo" required>
+                    </div>
+                
+
+                <div class="form-group">
+                    <label for="telefono">Número de Teléfono:</label>
+                    <input placeholder="Ingresa tu numero Ejp:7897895412" type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="informacion">Información Adicional:</label>
+                    <textarea placeholder="Cuéntanos sobre ti" id="informacion" name="informacion" rows="4" cols="50"></textarea>
+                </div>
+
+                <input type="submit" value="Enviar">
+
+            </form>
+        </div>
+    </section>
+
+</section>
+
+
+
+<script>
+    const contenedor = document.querySelector(".carrusel-padre");
+const scrollLeftButton = document.getElementById("scrollLeft");
+const scrollRightButton = document.getElementById("scrollRight");
+
+scrollLeftButton.addEventListener("click", () => {
+  contenedor.scrollLeft -= 275;
+});
+
+scrollRightButton.addEventListener("click", () => {
+  contenedor.scrollLeft += 275;
+});
+</script>
+{% endblock %}

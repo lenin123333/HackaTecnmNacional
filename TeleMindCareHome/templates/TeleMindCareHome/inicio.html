@@ -1,0 +1,36 @@
+{% extends "TeleMindCareHome/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+
+<div class="titulo-evaluacion">
+    <h1>Evaluacion</h1>
+</div>
+
+<main class="contenedor_evaluacion">
+
+    <a href="{% url 'Analizador'  %}" class="contenedor-enlaces">
+        <h3>Evaluacion</h3>
+        <img src="{% static 'TeleMindCareHome/img/iconos/evaluacion.png' %}" width="300px" alt="">
+    </a>
+
+    
+    <div class="caja">
+            <h3>Test</h3>
+            <img src="{% static 'TeleMindCareHome/img/iconos/contenido-web.png' %}" width="300px" alt="">
+            <div class="enlaces">
+                <a href="{% url 'Ansiedad'  %}">Ansiedad</a>
+                <a href="{% url 'Depresion'  %}">Depresion</a>
+                <a href="{% url 'Estres'  %}">Estres</a>
+            </div>
+    </div>
+
+    <a href="{% url 'oximetro'  %}" style="display: flex; flex-direction: column; align-items: center;" class="contenedor-enlaces">
+        <h3>Actividad Fisiologicas</h3>
+        <h3 id="valorOximetro">75</h3>
+    </a>
+</main>
+
+{% endblock %}

@@ -1,0 +1,1620 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.fondo {
+    background-color: #003566;
+}
+
+header {
+
+    height: 140px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+
+
+header div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: 10px;
+    margin-top: 8px;
+
+}
+
+
+header div img {
+    width: 100px;
+    height: 100px;
+    padding-top: 10px;
+}
+
+header div h3 {
+    margin: 25px;
+    font-size: 45px;
+    color: white;
+
+}
+
+header div a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+header div nav p {
+    color: aliceblue;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 190px;
+    font-size: 20px;
+}
+
+nav {
+    margin: 40px;
+
+}
+
+
+
+nav a {
+    padding: 15px;
+    margin-left: 20px;
+    font-size: 25px;
+    border-radius: 5%;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+
+
+}
+
+
+
+
+
+
+nav a:hover {
+
+    color: white;
+    text-decoration: underline;
+}
+
+
+/* CSS */
+/* Estilo del contenedor del menú desplegable */
+.dropdown {
+    display: inline-block;
+}
+
+/* Estilo del contenido del menú desplegable (inicialmente oculto) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Estilo de los enlaces dentro del menú desplegable */
+.dropdown-content .deplegable {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Cambia el color del enlace cuando se pasa el mouse sobre él */
+.dropdown-content .deplegable:hover {
+    color: white;
+    background-color: #007df4;
+}
+
+/* Muestra el menú desplegable cuando se pasa el mouse sobre el enlace "Seguimiento" */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #3091f8;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 80px;
+    position: fixed;
+    /* Fijar el footer */
+    bottom: 0;
+    /* Pegar el footer en la parte inferior */
+    width: 100%;
+    /* Ancho del 100% para ocupar todo el ancho de la pantalla */
+}
+
+
+
+.contenedor-login {
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
+
+#contenedor_video {
+    margin-bottom: 150px;
+}
+
+.contenedor__todo {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+
+    position: relative;
+}
+
+.caja__trasera {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 128, 255, 0.5);
+
+}
+
+.caja__trasera div {
+    margin: 100px 40px;
+    color: white;
+    transition: all 500ms;
+}
+
+
+.caja__trasera div p,
+.caja__trasera button {
+    margin-top: 30px;
+}
+
+.caja__trasera div h3 {
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.caja__trasera div p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.caja__trasera button {
+    padding: 10px 40px;
+    border: 2px solid #fff;
+    font-size: 14px;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transition: all 300ms;
+}
+
+.caja__trasera button:hover {
+    background: #fff;
+    color: #46A2FD;
+}
+
+/*Formularios*/
+
+.contenedor__login-register {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+
+
+}
+
+.contenedor__login-register form {
+    width: 100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedor__login-register form h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #46A2FD;
+}
+
+.contenedor__login-register form input {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedor__login-register form button {
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background: #46A2FD;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+
+
+
+.formulario__login {
+    opacity: 1;
+    display: block;
+}
+
+.formulario__register {
+    display: none;
+}
+
+
+
+
+
+.titulo-evaluacion {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+    margin: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+
+
+.contenedor_evaluacion {
+    display: flex;
+    flex-direction: row;
+    /* Para que estén uno al lado del otro */
+    margin: 40px;
+
+}
+
+
+.contenedor_evaluacion h3 {
+    text-align: center;
+    margin: 50px;
+    opacity: 3;
+
+}
+
+
+
+/* Estilos para los enlaces dentro del contenedor */
+.contenedor_evaluacion a {
+    text-align: center;
+    text-decoration: none;
+    width: 30%;
+    margin-right: 50px;
+    /* Espacio entre enlaces */
+    padding: 8px 12px;
+    /* Espacio interno (ajústalo según tus necesidades) */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-bottom: 50px;
+}
+
+.contenedor-enlaces {
+    height: 590px;
+}
+
+/* Estilos para los enlaces cuando el mouse se acerca */
+.contenedor_evaluacion a:hover {
+    background-color: #2196F3;
+    color: #fff;
+    border: 1px solid #2196F3;
+
+}
+
+
+.contenedor_evaluacion .caja {
+    text-align: center;
+    text-decoration: none;
+    width: 30%;
+
+    margin-bottom: 100px;
+    margin-right: 50px;
+    /* Espacio entre enlaces */
+    padding: 8px 12px;
+    /* Espacio interno (ajústalo según tus necesidades) */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    overflow: hidden;
+    /* Oculta el desbordamiento para la animación */
+}
+
+.contenedor_evaluacion .caja:hover {
+    background-color: #2196F3;
+    color: #fff;
+    border: 1px solid #2196F3;
+}
+
+.contenedor_evaluacion .enlaces {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    opacity: 0;
+    /* Inicialmente oculto */
+    transform: translateY(-20px);
+    /* Desplazar hacia arriba */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.contenedor_evaluacion .caja:hover .enlaces {
+    opacity: 1;
+    /* Hacer visible en hover */
+    transform: translateY(0);
+    /* Sin desplazamiento en hover */
+}
+
+.contenedor_evaluacion .enlaces a {
+    text-decoration: none;
+    color: #333;
+    margin: 5px 0;
+    transition: color 0.3s;
+
+}
+
+.contenedor_evaluacion .enlaces a:hover {
+    color: #fff;
+    background-color: #007BFF;
+}
+
+#valorOximetro {
+    font-size: 80px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #F7F7F7;
+    border: 6px solid #BDBDBD;
+    text-align: center;
+    /* Alinea el contenido en el centro horizontalmente */
+    display: flex;
+    justify-content: center;
+    /* Alinea el contenido en el centro verticalmente */
+    align-items: center;
+
+}
+
+
+
+
+
+
+
+
+#contenedor_tarea {
+    display: flex;
+    flex-direction: row;
+    /* Cambiado de column a row */
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    /* Centra los elementos horizontalmente */
+}
+
+
+#enviar {
+    padding: 10px 40px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    border: none;
+    font-size: 14px;
+    background: #46A2FD;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+#enviar:hover {
+    background: #3091f8;
+    color: #fff;
+}
+
+
+#videoPlayer {
+    max-width: 100%;
+
+    /* Asegura que el video no supere el ancho del contenedor */
+    margin-top: 30px;
+}
+
+
+
+/*Estilo titulo*/
+
+
+.titulo-principal {
+    background-color: #5dc1b9;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 15px;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
+/*Estilo }Introduccion*/
+#caja-intro {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#texto-inicial {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*Estilo Instrucciones*/
+#caja-instrucciones {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#instrucciones {
+    margin: 0;
+}
+
+
+/*Estilo Formulario*/
+
+#caja-form {
+    background-color: #fff;
+    padding: 20px;
+    padding-bottom: 50px;
+    border-radius: 5px;
+    margin: 0 auto;
+    /* Centrar horizontalmente */
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 60%;
+    /* Ancho del formulario  / aqui tambien se encuentra la grafica*/
+}
+
+.dassForm {
+    text-align: left;
+    /* Alinea el texto del formulario a la izquierda */
+}
+
+/* Añade estilos a las preguntas y etiquetas de radio si es necesario */
+.preguntas {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+/* Añade estilos al botón de enviar si es necesario */
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    flex-grow: 0;
+    /* Asegura que el botón no crezca en flexbox */
+}
+
+
+
+
+.preguntas {
+    margin-bottom: 15px;
+}
+
+.preguntas p {
+    margin: 0;
+    background-color: #5dc1b9;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+.preguntas span{
+    font-weight: 700;
+}
+
+label {
+    margin-left: 5px;
+    font-size: 24px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+    width: 20px; /* Ajusta el tamaño según tus preferencias */
+    height: 20px;
+}
+
+/* Estilo caja Resultados */
+.caja-resultados-estilos {
+   
+    margin-bottom: 0;
+    /* Asegura que no haya margen inferior en la caja de resultados */
+    padding: 20px;
+    margin: 0 auto;
+    /* Centrar horizontalmente */
+    margin-top: 20px;
+    text-align: center;
+    width: 60%;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 25px;
+    flex-direction: column;
+    
+}
+
+/* Estilos para resaltar la prevalencia de Burnout */
+#caja-resultados .burnout-yes {
+    color: red;
+    font-weight: bold;
+}
+
+#caja-resultados .burnout-no {
+    color: green;
+    font-weight: bold;
+}
+
+pre {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#myChart {
+    max-width: 500px;
+    /*Tamaño del plano cartesiano de la grafica*/
+    margin: 0 auto;
+    /* Centra horizontalmente */
+    display: block;
+    /* Asegura que sea un elemento de bloque sin margen */
+    max-height: 400px;
+}
+
+
+.btnRegistrarse-page {
+    display: none;
+}
+
+
+@media screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+    }
+
+    .titulo-evaluacion {
+        margin-top: 50px;
+    }
+
+
+    /* Estilos para pantallas de 1024px o más */
+    .contenedor-enlaces {
+
+        height: 490px;
+    }
+
+    .contenedor_evaluacion img {
+
+        width: 200px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #valorOximetro {
+        width: 200px;
+        height: 200px;
+
+
+    }
+
+    .titulo-principal {
+        margin: 30px;
+    }
+
+
+    #contenedor_tarea {
+
+        flex-direction: column;
+        /* Cambiado de column a row */
+
+    }
+
+
+
+}
+
+
+
+@media screen and (max-width: 850px) {
+
+    .contenedor_evaluacion {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .contenedor_evaluacion a {
+
+        width: 80%;
+
+    }
+
+    .contenedor_evaluacion img {
+
+        width: 50%;
+
+    }
+
+    .contenedor_evaluacion .caja {
+        width: 80%;
+    }
+
+    #valorOximetro {
+        width: 250px;
+        height: 250px;
+
+
+    }
+
+
+}
+
+@media screen and (max-width: 500px) {
+
+    header {
+
+        margin-top: 200px;
+    }
+
+    header div {
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0px;
+
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+
+    }
+
+    .titulo-evaluacion {
+        margin-top: 150px;
+    }
+
+
+    .contenedor_evaluacion {
+        width: 90%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .contenedor_evaluacion .contenedor-enlaces {
+
+        width: 80%;
+        height: 370px;
+    }
+
+    .contenedor_evaluacion img {
+
+        width: 50%;
+
+    }
+
+    .contenedor_evaluacion .caja {
+        width: 80%;
+        height: 420px;
+        margin-bottom: 50px;
+    }
+
+    #valorOximetro {
+        width: 250px;
+        height: 250px;
+
+
+    }
+
+
+
+    .titulo-principal {
+        margin-top: 180px;
+    }
+
+    #videoIA {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #videoPlayer {
+        max-width: 100%;
+        /* Asegura que el video no supere el ancho del contenedor */
+        margin: 0px;
+        margin-top: 30px;
+
+    }
+
+    .boton-mostrar-grafica {
+
+        margin-bottom: 100px;
+    }
+
+    .caja__trasera {
+        display: none;
+    }
+
+
+    .contenedor__todo {
+        width: 90%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedor__login-register {
+
+        top: 0px;
+        right: 0px;
+        left: 0px;
+    }
+
+    .contenedor__login-register form {
+        width: 100%;
+
+        background: white;
+        position: relative;
+        border-radius: 20px;
+    }
+
+    .btnRegistrarse-page {
+        display: flex;
+        color: #46A2FD;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.container-video {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+#upload-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #005194;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: .5%;
+}
+
+#upload-section p {
+    margin-bottom: 80px;
+}
+
+#messaging-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #005194;
+    margin: 20px;
+    border-radius: .5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.boton-vistagrafica {
+
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3389e5;
+
+}
+
+
+.boton-vistagrafica:hover {
+    background: #0758af;
+    color: #fff;
+}
+
+
+
+#video-player {
+    flex: 2;
+}
+
+
+
+.vistavideom {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+
+#videoCarousel {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+#videoDate {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#videoCarousel video {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+
+.carousel-button.left {
+    left: -45px;
+
+}
+
+.carousel-button.right {
+    right: -45px;
+}
+
+
+.boton-respuestaV {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3389e5;
+
+}
+
+.boton-respuestaV:hover {
+    background: #0758af;
+    color: #fff;
+}
+
+
+
+/*ESTILOS VISTAS TEST*/
+#container-testm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#container-testb {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    align-items: center;
+}
+
+
+#tabs {
+    list-style-type: none;
+    padding: 50px;
+    background-color: #f1f1f1;
+    justify-content: space-between;
+    overflow-y: scroll;
+    max-height: 400px;
+    width: 100%
+}
+
+#container-list {
+    width: 20%;
+    margin-left: 2%;
+
+}
+
+
+
+
+#tabs li {
+    padding: 2px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#tabs li button {
+    width: 100%;
+    background-color: inherit;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+#tabs li button:hover {
+    background-color: #ddd;
+}
+
+#tabs li .btnTests {
+    background-color: #88a4ff;
+    border-radius: 0.5px;
+}
+
+#displayArea {
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    position: relative;
+    margin: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+
+    display: none;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    height: 500px;
+    box-sizing: border-box;
+}
+
+#btnGraph {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+#btnGraph:hover {
+    background-color: darkgreen;
+}
+
+
+.sectiontest {
+    flex: 10;
+    padding: 20px;
+    background-color: rgb(37, 150, 190);
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: row;
+}
+
+.boton-mostrar-grafica {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.boton-mostrar-grafica a {
+
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3389e5;
+
+}
+
+
+.boton-mostrar-grafica a:hover {
+    background: #0758af;
+    color: #fff;
+
+}
+
+
+@media (max-width: 1024px) {
+
+    #container-testb {
+        flex-direction: column;
+
+    }
+
+    #container-list {
+        width: 80%;
+    }
+
+    #tabs {
+        display: flex;
+        flex-direction: row;
+        overflow-y: none;
+        overflow-x: scroll;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+
+    #displayArea {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 100px;
+        width: 80%;
+        height: 500px;
+        margin: 0px;
+    }
+}
+
+
+
+@media (max-width: 850px) {
+
+
+    #videoCarousel video {
+        width: 80%;
+        margin-left: 90px;
+    }
+
+    .carousel-button.left {
+        left: 20px;
+        left: -45px;
+
+    }
+
+    .carousel-button.right {
+        right: 10px;
+        right: -45px;
+    }
+
+
+
+
+
+
+
+
+
+    .contenedor-login {
+
+        margin-bottom: 150px;
+        margin-top: 150px;
+    }
+
+
+
+}
+
+
+@media (max-width: 600px) {
+    #displayArea {
+
+        width: 80%;
+    }
+
+
+
+}
+
+@media (max-width: 500px) {
+
+    #upload-section,
+    #messaging-section {
+        width: 90%;
+    }
+
+
+    .container-video {
+        margin-top: 150px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #videoCarousel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+
+    }
+
+    #videoCarousel video {
+
+        margin-left: 0px;
+    }
+
+    .carousel-button.left {
+        margin: 10px;
+
+
+    }
+
+    .carousel-button.right {
+        margin: 10px;
+    }
+
+
+
+    #tabs {
+        display: flex;
+        width: auto;
+        padding: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: -10px;
+        margin-bottom: 20px;
+    }
+
+    #displayArea {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+}
+
+
+.boton-graftest {
+    padding: 10px 20px;
+
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: blue;
+
+}
+
+.btn-contacps {
+    padding: 10px 20px;
+
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: blue;
+}
+
+/* Oximetro */
+
+#valorOximetro {
+    font-size: 80px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #F7F7F7;
+    border: 6px solid #CA4E33;
+    text-align: center;
+    /* Alinea el contenido en el centro horizontalmente */
+    display: flex;
+    justify-content: center;
+    /* Alinea el contenido en el centro verticalmente */
+    align-items: center;
+
+}
+
+#valorOximetro {
+    font-size: 60px;
+    width: 100%;
+    /* Ancho del 100% del contenedor */
+    max-width: 300px;
+    /* Establece un ancho máximo para evitar que se agrande demasiado */
+    height: 300px;
+    /* Altura automática para mantener la relación de aspecto */
+    border-radius: 50%;
+    background: #F7F7F7;
+    border: 6px solid #BDBDBD;
+    text-align: center;
+    /* Alinea el contenido en el centro horizontalmente */
+    display: flex;
+    justify-content: center;
+    /* Alinea el contenido en el centro verticalmente */
+    align-items: center;
+}
+
+.scroll {
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+#oximetro {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    /* Ancho del 100% del contenedor */
+    max-width: 100%;
+    /* Establece un ancho máximo para que sea responsive */
+    margin-right: 10px;
+}
+
+#oximetro td,
+#oximetro th {
+    padding: 8px;
+}
+
+#oximetro tr:nth-child(even) {
+    background-color: #002f5b;
+}
+
+#oximetro tr {
+    color: white;
+    background-color: #00264A;
+}
+
+#oximetro tr:hover {
+    background-color: #ddd;
+}
+
+#oximetro th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #00264A;
+    color: white;
+    text-align: left;
+}
+
+#oximetro tr {
+    padding: 0 5px 0 0;
+    /* Only right padding*/
+}
+
+.valoresFisio {
+    display: flex;
+    align-items: flex-start;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 150px;
+}
+
+.mycharbox {
+    width: 100%;
+    height: 350px;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 1024px) {
+    .valoresFisio {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 250px;
+    }
+
+    .scroll {
+        width: 90%;
+        height: 250px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+}
+
+
+
+@media (max-width: 700px) {
+    #valorOximetro {
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+        /* Reducir el tamaño de fuente para pantallas muy pequeñas */
+    }
+
+}
+
+@media (max-width: 500px) {
+    .valoresFisio {
+
+        width: 90%;
+        margin-bottom: 150px;
+    }
+
+    .scroll {
+        width: 100%;
+    }
+
+    #grafica {
+        width: 100%;
+    }
+
+    #grafica2 {
+        width: 100%;
+        
+    }
+
+    .mycharbox {
+        width: 100%;
+        
+    }
+}
+
+@media (max-width: 900px) {
+    #oximetro {
+        width: 100%;
+        font-size: 14px;
+        /* Ajusta el tamaño de fuente para pantallas pequeñas */
+    }
+
+}
+
+#grafica,
+#grafica2 {
+    margin: 0 auto;
+    /* Centra horizontalmente */
+    color: white;
+    background-color: white;
+}
+
+
+/* Oximetro */
+
+
+
+.contenedor-chat {
+    background-color: #005194;
+    border-radius: 0.9px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    padding-bottom: 20px;
+    margin: 0px auto;
+    margin-top: 50px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.chat-header {
+    background-color: #003366;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    clear: both;
+    overflow: hidden;
+}
+
+.user-message {
+    background-color: #f29175;
+    color: #fff;
+    float: right;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.bot-message {
+    background-color: #5dc1b9;
+    color: #fff;
+    float: left;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.vistavideom {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.boton-respuestaV {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.formulario {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    /* Ajusta el ancho según tus necesidades */
+    margin: 0px auto;
+    margin-bottom: 150px;
+}
+
+.input-mensaje {
+    width: 80%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    float: left;
+}
+
+.enviar-mensaje {
+    width: 20%;
+    background-color: #3389e5;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    float: left;
+}
+
+@media (max-width: 1024px) {
+    .contenedor-chat {
+
+        width: 90%;
+
+    }
+
+    .formulario {
+
+
+        width: 90%;
+        /* Ajusta el ancho según tus necesidades */
+
+    }
+}
+
+#emociones-chart-container {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    /* Centra el contenido horizontalmente */
+    width: 50%;
+    height: 50%;
+    margin: 10px auto;
+}
+
+#emociones-chart {
+    max-width: 100%;
+    /* Hace que la gráfica sea responsive */
+
+}
+
+@media (max-width: 1024px) {
+    #emociones-chart-container {
+
+        width: 90%;
+        height: 90%;
+
+    }
+}
+
+@media (max-width: 500px) {
+    #emociones-chart-container {
+
+        margin-bottom: 150px;
+    }
+
+  
+
+}

@@ -1,0 +1,113 @@
+{% extends "TeleMindCareHome/base.html"  %}
+{%  load static %}
+{% block content %}
+
+
+
+
+<h1 class="titulo-principal" >
+    Bienvenido a tu propio espacio
+</h1>
+<div class="contenedor-chat"  id="chat-container">
+    
+    {% if not preguntar  %}
+    <div class="message bot-message">
+        ¡Hola! Soy Lily. ¿Cómo te encuentras el día de hoy?
+    </div>
+    {% else %}
+    <div class="message user-message">
+        Podrias profundizar mas en este consejo me interesaria saber mas {{ preguntar }}
+    </div>
+    {% endif %}
+
+</div>
+
+<form id="form-mensaje" class="formulario">
+    {% csrf_token %}   
+    <input type="text" class="input-mensaje" id="mensaje" placeholder="Escribe tu mensaje..." />
+    <button type="submit" class="enviar-mensaje" >Enviar</button>
+</form>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Verificar si la variable preguntar existe y no está vacía
+        if ("{{ preguntar }}" !== "") {
+            // Si la variable preguntar existe, enviar la petición a la API
+            enviarPeticionAPI();
+        }
+    });
+    
+    document.getElementById('form-mensaje').addEventListener('submit', function(event) {
+        event.preventDefault();
+        enviarMensaje();
+    });
+    
+    async function enviarMensaje() {
+        try {
+            // Obtener el mensaje del usuario
+            var userMessage = document.getElementById("mensaje").value;
+            document.querySelector('#mensaje').value = '';
+    
+            // Crear un nuevo mensaje de usuario en el chat
+            var userChatMessage = document.createElement('div');
+            userChatMessage.className = 'message user-message';
+            userChatMessage.innerText = userMessage;
+            document.getElementById('chat-container').appendChild(userChatMessage);
+    
+            if ("{{ preguntar }}" !== "") {
+                // Si la variable preguntar existe, enviar la petición a la API
+                await enviarPeticionAPI();
+            }
+    
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+    
+    async function enviarPeticionAPI() {
+        try {
+            // Crear un mensaje de carga mientras se procesa la respuesta
+            var loadingMessage = document.createElement('div');
+            loadingMessage.className = 'message bot-message';
+            loadingMessage.innerText = '...';
+            document.getElementById('chat-container').appendChild(loadingMessage);
+    
+            // Enviar el mensaje al servidor
+            const response = await fetch('http://127.0.0.1:8000/TeleMindCare/ChatBot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': obtenerCsrfToken(),
+                },
+                body: JSON.stringify({ mensaje_platica: "{{ preguntar }}" }),
+            });
+    
+            const data = await response.json();
+    
+            // Eliminar el mensaje de carga
+            loadingMessage.remove();
+    
+            // Mostrar la respuesta del chatbot
+            var botChatMessage = document.createElement('div');
+            botChatMessage.className = 'message bot-message';
+            botChatMessage.innerText = data.bot_response;
+            document.getElementById('chat-container').appendChild(botChatMessage);
+    
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+    
+    // Función para obtener el token CSRF
+    function obtenerCsrfToken() {
+        var csrfTokenInput = document.querySelector('input[name="csrfmiddlewaretoken"]');
+        return csrfTokenInput ? csrfTokenInput.value : '';
+    }
+    
+    
+</script>
+
+
+
+{% endblock %}

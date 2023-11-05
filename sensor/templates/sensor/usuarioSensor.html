@@ -1,0 +1,179 @@
+{% extends "TeleMindCareHome/base.html" %}
+{% load static %}
+{% block content %}
+
+<h1 class="titulo-principal">
+    Resultados
+</h1>
+<center>
+
+    <div class="valoresFisio">
+        <div class="scroll">
+
+            <table id='oximetro'>
+                <tr>
+                    <th>Pulso</th>
+                    <th>Oxígeno</th>
+                    <th>Estado</th>
+                    <th>Fecha</th>
+                </tr>
+                {% for sensor in datos_sensores %}
+                <tr>
+                    <td>{{ sensor.pulso }} bpm</td>
+                    <td>{{ sensor.oxigeno }} %</td>
+                    <td>{{ sensor.estado }}</td>
+                    <td>{{ sensor.fecha }}</td>
+                </tr>
+                
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="mycharbox">
+
+            <canvas id="grafica" width="700" height="250"></canvas> <br>
+            <canvas id="grafica2" width="700" height="250"></canvas>
+        </div>
+
+    </div>
+
+
+
+</center>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+// Obtén una referencia al elemento canvas
+var ctx = document.getElementById('grafica').getContext('2d');
+var ctx2 = document.getElementById('grafica2').getContext('2d');
+
+// Datos de la gráfica
+var fechas = [{% for sensor in datos_sensores %}"{{ sensor.fecha }}",{% endfor %}];
+var pulsos = [{% for sensor in datos_sensores %}{{ sensor.pulso }},{% endfor %}];
+var pulsos2 = [{% for sensor in datos_sensores %}{{ sensor.pulso }} - 10,{% endfor %}];
+var oxigeno = [{% for sensor in datos_sensores %}{{ sensor.oxigeno }},{% endfor %}];
+var oxigeno2 = [{% for sensor in datos_sensores %}{{ sensor.oxigeno }} - 10,{% endfor %}];
+var labels=[]
+
+//Formato de Fecha
+
+
+// Función para formatear la fecha
+function formatearFecha(fecha) {
+  const partes = fecha.match(/(\d+) de (\w+) de (\d+) a las (\d+):(\d+)/);
+
+  if (partes) {
+    const meses = {
+      enero: 1, febrero: 2, marzo: 3, abril: 4, mayo: 5, junio: 6,
+      julio: 7, agosto: 8, septiembre: 9, octubre: 10, noviembre: 11, diciembre: 12
+    };
+
+    const dia = partes[1];
+    const mes = meses[partes[2].toLowerCase()];
+    const año = partes[3];
+    const fechaFormateada = `${dia}/${mes}/${año}`;
+    labels.push(fechaFormateada); // Agrega la fecha formateada al array "labels"
+    return fechaFormateada;
+  } else {
+    return "Fecha inválida";
+  }
+}
+
+const fechasFormateadas = fechas.map(formatearFecha);
+
+// Muestra las fechas en la consola
+for (let i = 0; i < fechasFormateadas.length; i++) {
+  console.log(`Fecha ${i + 1}: ${fechasFormateadas[i]}`);
+}
+
+console.log("Fechas almacenadas en el array 'labels':", labels);
+// Datos inventados para la gráfica
+var data = {
+ labels: labels,
+ datasets: [
+   {
+     label: 'Pulsos',  
+     data: pulsos,
+     backgroundColor: 'rgba(255, 0, 131,0.5)',
+     borderColor: 'rgba(255, 0, 131)',
+     fill:1
+   },
+   {
+     data: pulsos2,
+   },
+ ],
+};
+
+// Opciones de la gráfica
+var options = {
+responsive: true,
+maintainAspectRatio: true,
+scales: {
+   x: {
+       title: {
+           display: true,
+           text: 'Fechas'
+       }
+   },
+   y: {
+       title: {
+           display: true,
+           text: 'Valores'
+       }
+   }
+},
+};
+
+// Crea la gráfica
+var myChart = new Chart(ctx, {
+type: 'line',
+data: data,
+options: options
+});
+
+//Grafica2
+
+var data = {
+ labels: labels,
+ datasets: [
+   {
+     label: 'Oxigeno',  
+     data: oxigeno,
+     backgroundColor: 'rgba(75,192,192,0.5)',
+     borderColor: 'rgba(75,192,192)',
+     fill:1
+   },
+   {
+     data: oxigeno2,
+   },
+ ],
+};
+
+// Opciones de la gráfica
+var options = {
+responsive: true,
+maintainAspectRatio: true,
+scales: {
+   x: {
+       title: {
+           display: true,
+           text: 'Fechas'
+       }
+   },
+   y: {
+       title: {
+           display: true,
+           text: 'Valores'
+       }
+   }
+},
+};
+
+// Crea la gráfica
+var myChart = new Chart(ctx2, {
+type: 'line',
+data: data,
+options: options
+});
+</script>
+{% endblock %}

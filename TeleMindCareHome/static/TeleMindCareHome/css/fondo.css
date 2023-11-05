@@ -1,0 +1,22 @@
+body{
+    
+    background-image: url(../img/bg3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+/* Estilo para los campos de entrada con errores */
+.is-invalid {
+    border-color: #ff0000; /* Cambia el color del borde a rojo (#ff0000) */
+}
+
+/* Estilo para los mensajes de error */
+.invalid-feedback {
+    color: #ff0000; /* Cambia el color del texto de error a rojo (#ff0000) */
+    font-size: 14px; /* Ajusta el tamaño del texto de error según tu preferencia */
+    margin-top: 5px; /* Agrega espacio entre el campo de entrada y el mensaje de error */
+    /* Puedes agregar más estilos según tus preferencias, como fuente, espaciado, etc. */
+}

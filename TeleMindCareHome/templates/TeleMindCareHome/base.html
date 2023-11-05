@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0055B2; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #002f5b; 
+}
+
+</style>
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% if request.path == '/' %}
+    <link rel="stylesheet" href="{% static 'TeleMindCareHome/css/style.css' %}">
+    {% elif request.path == '/TeleMindCare/Login' or request.path == '/TeleMindCare/Register' %}
+    <link rel="stylesheet" href="{% static 'TeleMindCareHome/css/fondo.css' %}">
+    <link rel="stylesheet" href="{% static 'TeleMindCareHome/css/estilos.css' %}">
+    {% else %}
+    <link rel="stylesheet" href="{% static 'TeleMindCareHome/css/estilos.css' %}">
+    {% endif %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+
+<body
+    class="{% if request.path != '/TeleMindCare/Login' and request.path != '/TeleMindCare/Register'  and request.path != '/TeleMindCare/' %} fondo {% endif %}">
+
+    <header
+        class="{% if request.path != '/TeleMindCare/Login' and request.path != '/TeleMindCare/Register' %} color {% endif %} ">
+        <div class="contenedor-imagen">
+
+            <a href="{% url 'Home' %}"><img src="{% static 'TeleMindCareHome/img/cerebro.png' %}" alt=""></a>
+            <a href="{% url 'Home' %}">
+                <h3>TeleMindCare</h3>
+            </a>
+
+        </div>
+        <div class="contenedor_menu_nav">
+            <!-- HTML -->
+            <nav class="menu_nav">
+                {% if user.is_authenticated %}
+                <a href="{% url 'Inicio' %}" id="btn-galeria">Evaluación</a>
+                <a href="{% url 'chatTeleMindCare' %}" id="btn-galeria">Chatea con Lily</a>
+                <!-- Agrega una clase "dropdown" al enlace "Seguimiento" -->
+                <div class="dropdown">
+                    <a href="#" id="btn-ubicacion">Seguimiento</a>
+                    
+                    <!-- Contenido del menú desplegable -->
+                    <div class="dropdown-content">
+                        <a class="deplegable" href="{% url 'showVideos' %}">Videos</a>
+                        <a class="deplegable" href="{% url 'showGraficas' %}">Tests</a>
+                    </div>
+                </div>
+               
+                
+                <a href="{% url 'Logout'  %}" id="btn-ubicacion">Cerrar Sesión</a>
+                {% else %}
+                <a href="#" id="btn-galeria">Servicios</a>
+                <a href="#" id="btn-galeria">Nosotros</a>
+                <a href="{% url 'Login' %}" id="btn-ubicacion">Iniciar Sesión</a>
+                {% endif %}
+
+               
+            </nav>
+
+
+
+        </div>
+    </header>
+
+
+
+    {% block content %}
+
+
+
+    {% endblock %}
+
+
+    <footer>
+        
+            <div>
+                &copy; 2023 Tu Empresa.
+            </div>
+            <div>
+                Todos los derechos reservados.
+            </div>
+             
+
+      
+    </footer>
+
+</body>
+<!-- SweetAlert2 CSS -->
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+<script src="{% static 'TeleMindCareHome/js/script.js' %}"></script>
+<script src="{% static 'TeleMindCareHome/js/jquery-1.12.3.min.js' %}"></script>
+<script src="{% static 'TeleMindCareHome/js/parallas.js' %}"></script>
+<script src="{% static 'TeleMindCareHome/js/efectos.js' %}"></script>
+</html>

@@ -1,0 +1,50 @@
+{% extends "TeleMindCareHome/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container-video">
+    <!-- Sección de subida de vídeo -->
+    <div id="upload-section">
+        <h3>Visualiza o crea los Test</h3>
+        <p>Crea uno nuevo</p>
+        <!--<input type="file" id="videoFile" accept="video/*">-->
+        <a class="boton-vistagrafica" href="{% url 'Inicio' %}">Realizar Nuevo Tests</a>
+    </div>
+
+    <!-- Sección de mensajería -->
+    <div id="messaging-section">
+        <h3>Contacto Psicólogo</h3>
+        <p>Nombre: Lorem ipsum</p>
+        <p>Correo: Lorem@example.com</p>
+        <textarea class="vistavideom"
+            placeholder="Mensaje de psicólogo por si hay seguimiento de un profesional"></textarea>
+        <button class="boton-respuestaV">Responder a psicólogo</button>
+    </div>
+</div>
+
+
+{% if test_usuarios %}
+<div id="container-testb">
+    <div id="container-list">  
+        <ul id="tabs">
+         {% for test in test_usuarios %}
+          <li>
+            <button class="boton-test {% if forloop.first %}primer-test{% endif %}" onclick="changeContent(this, '{{ test.id }}', '{{ test.tipoTest }}')">{{ test.tipoTest }}</button>
+          </li>
+
+         <input type="hidden" id="btn-{{ test.id }}" value="{{ test.porcentaje }}">
+         {% endfor %}
+        </ul>
+    </div>
+  
+
+    <div id="displayArea">
+        <!-- Aquí almaceno los test que existan -->
+      
+    </div>
+</div>
+{% else %}
+    <p style="text-align: center; font-size:24px; color:white; font-weight: bold; padding-top:35px; padding-bottom:150px;" >Aún no has realizado un test</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "TeleMindCareHome/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+<main class="contenedor-login">
+
+    <div class="contenedor__todo">
+        <div class="caja__trasera">
+            <div class="caja__trasera-login">
+                <h3>¿Ya tienes una cuenta?</h3>
+                <p>Inicia sesión para entrar en la página</p>
+                <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+            </div>
+            <div class="caja__trasera-register">
+                <h3>¿Aún no tienes una cuenta?</h3>
+                <p>Regístrate para que puedas iniciar sesión</p>
+                <a href="{% url 'Register' %}">
+                    <button id="btn__registrarse">Regístrarse</button>
+                </a>
+
+            </div>
+        </div>
+
+        <!--Formulario de Login y registro-->
+        <div class="contenedor__login-register">
+            <!--Login-->
+            <form method="post" action="{% url 'Login' %}" class="formulario__login">
+                {% csrf_token %}
+                <h2>Iniciar Sesión</h2>
+
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li id="hola" {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }} vv</li>
+                    {% endfor %}
+
+                </ul>
+                {% endif %}
+
+                <div class="form-group">
+
+                    <input type="text" name="username" id="username" placeholder="Ingresa tu nombre de Usuario"
+                        class="form-control">
+                </div>
+                <div class="form-group">
+
+                    <input type="password" name="password" id="password" placeholder="Contraseña" class="form-control">
+                </div>
+                <button type="submit" onclick="sendDataToAndroid()">Entrar</button>
+                <br><br>
+                <a class="btnRegistrarse-page"   href="{% url 'Register' %}">
+                    ¿No, tienes cuenta? Regístrate
+                </a>
+            </form>
+
+
+
+            <!--Register-->
+
+        </div>
+    </div>
+
+</main>
+
+<script>
+    function sendDataToAndroid() {
+        var username = document.getElementById('username').value;
+
+        // Comunicar los datos a la aplicación Android
+        Android.showToast(username);
+    }
+</script>
+<!--
+        <script src="assets/js/script.js"></script>-->
+{% endblock %}

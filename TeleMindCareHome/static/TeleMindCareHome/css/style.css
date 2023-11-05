@@ -1,0 +1,525 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background: url('../img/fondo.webp');
+    background-repeat: repeat;
+}
+
+
+header {
+
+    height: 140px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+
+
+header div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: 10px;
+    margin-top: 8px;
+
+}
+
+
+header div img {
+    width: 100px;
+    height: 100px;
+    padding-top: 10px;
+}
+
+header div h3 {
+    margin: 25px;
+    font-size: 45px;
+    color: white;
+
+}
+
+header div a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+header div nav p {
+    color: aliceblue;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 190px;
+    font-size: 20px;
+}
+
+nav {
+    margin: 40px;
+
+}
+
+
+
+nav a {
+    padding: 15px;
+    margin-left: 20px;
+    font-size: 25px;
+    border-radius: 5%;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+
+
+}
+
+
+
+
+
+
+nav a:hover {
+
+    color: white;
+    text-decoration: underline;
+}
+
+
+/* CSS */
+/* Estilo del contenedor del menú desplegable */
+.dropdown {
+    display: inline-block;
+}
+
+/* Estilo del contenido del menú desplegable (inicialmente oculto) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Estilo de los enlaces dentro del menú desplegable */
+.dropdown-content .deplegable {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Cambia el color del enlace cuando se pasa el mouse sobre él */
+.dropdown-content .deplegable:hover {
+    color: white;
+    background-color: #007df4;
+}
+
+/* Muestra el menú desplegable cuando se pasa el mouse sobre el enlace "Seguimiento" */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+.contenedor-nosotros {
+    width: 100%;
+    height: 850px;
+    position: relative;
+    bottom: 140px;
+    overflow: hidden; /* Evita que el fondo oscuro afecte a los elementos hijos */
+    background: url("../img/header.jpeg") #3091f8;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center 0;
+    z-index: -1;
+    
+}
+
+.contenedor-nosotros::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1; /* Coloca el fondo oscuro detrás del contenido */
+}
+.contenedor-nosotros .textos{
+    margin-top: 350px;
+    margin-left: 50px;
+}
+
+.contenedor-nosotros .textos h1{
+    font-size: 90px;
+    color: white;
+    font-weight: bold;
+}
+
+.contenedor-nosotros .textos h3{
+    font-size: 50px;
+    color: white;
+    font-style: italic;
+}
+
+
+
+
+
+
+.main .acerca-de .contenedor{
+    overflow: visible;
+    position: relative;
+}
+
+.main .acerca-de .foto{
+    width: 50%;
+    position: absolute;
+    margin-left: 100px;
+    top: -230px;
+    z-index: 0;
+    box-shadow: 0px 0px 15px rgba(0,0,0,.35);
+}
+
+.main .acerca-de .foto img{
+    width: 100%;
+    vertical-align: top;
+   
+}
+
+.main .acerca-de article{
+    background: #fff;
+    padding: 40px;
+    width: 40%;
+    position: relative;
+    top: 100px;
+    
+    right: 140px;
+    z-index: 1;
+    float: right;
+    box-shadow: 0px 0px 15px rgba(0,0,0,.35);
+}
+
+.main .acerca-de article h3{
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.main .acerca-de article p{
+    line-height: 28px;
+    margin-bottom: 15px;
+}
+
+
+
+/* Formulario unete a nosotros*/
+
+.contacto{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contacto h3{
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    color: #5dc1b9;
+    font-weight: 900;
+}
+
+.contacto .titulo{
+    color: #000;
+    font-size: 24px;
+}
+
+.contenedor_formulario {
+    max-width: 500px;
+  
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #5dc1b9;
+}
+
+
+.titulo {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    background-color: #007df4;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+footer {
+    background-color: #3091f8; /* Fondo de color gris oscuro */
+    color: #fff; /* Texto en color blanco */
+    padding: 20px 0; /* Espaciado interno superior e inferior */
+    text-align: center; /* Alineación del texto al centro */
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+    }
+
+    .contenedor-nosotros {
+      
+        bottom: 230px;
+      
+        
+    }
+}
+
+
+
+
+
+/* Carrusel Psicólogos */
+.carrusel-padre {
+    max-width: 1200px;
+
+    overflow-x: hidden;
+    display: flex;
+    height: 700px;
+    scroll-behavior: smooth;
+}
+
+.carrusel-padre .carrusel-hijo {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Para alinear los elementos verticalmente */
+    min-width: 260px;
+    line-height: 25px;
+    height: 590px;
+    margin: 0 5px;
+    padding: 0px 20px;
+    border: 1px solid darkgray;
+    text-align: justify;
+}
+
+
+.carrusel-hijo h1,.carrusel-hijo h2{
+    text-align: center;
+}
+.carrusel-hijo h1{
+    font-size: 18px;
+}
+.carrusel-hijo h2{
+    font-size: 14px;
+    color: darkgrey;
+    margin-bottom: 15px;
+}
+.carrusel-hijo ul{
+    font-size: 14px;
+    line-height: 22px;
+    text-align: left;
+    list-style: none;
+}
+.carrusel-hijo ul li{
+    text-align: justify;
+    margin-bottom: 5px;
+}
+.carrusel-hijo img{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.carrusel-control{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.carrusel-control button{
+    height: 70px;
+    margin: 0px 20px;
+    width: 70px;
+    background-color: #5dc1b9;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+.lista li{
+    margin-top: 10px;
+    width: 175px;
+    background-color: #5dc1b9;
+    color: white;
+    border-radius: 15px;
+    padding: 5px 15px;
+}
+.mostrarPerfil{
+    width: 200px;
+    border-radius: 0;
+    color: white;
+    background-color: cornflowerblue;
+    padding: 5px 20px;
+    border-radius: 15px;
+    margin-top: auto;
+    margin-bottom: 30px;
+    text-align: center;
+}
+/* Carrusel Psicólogos */
+
+
+
+
+
+
+@media screen and (max-width: 500px) {
+
+    header {
+
+        margin-top: 300px
+    }
+
+    header div {
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0px;
+
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        margin-bottom: 150px;
+
+    }
+
+    .contenedor-nosotros {
+       
+        bottom: 450px;
+      
+        
+    }
+
+ 
+   .textos{
+
+    position: relative;
+
+     top:200px;
+     right: 20px;
+   }
+     
+    .contenedor-nosotros .textos h1{
+        text-align: center;
+        font-size: 50px;
+       
+    }
+    
+    .contenedor-nosotros .textos h3{
+        text-align: center;
+        font-size: 25px;
+       
+    }
+
+  
+
+    .main .acerca-de .foto{
+        width: 100%;
+        margin-left: 0px;
+        position: absolute;
+        top: -440px;
+    }
+
+    .main .acerca-de article{
+        background: #fff;
+        padding: 40px;
+        width: 95%;
+        position: relative;
+        top: -150px;
+        right: 10px;
+        z-index: 1;
+        float: right;
+    }
+
+    .contenedor_formulario{
+        width: 90%;
+    }
+
+    .carrusel-control button{
+        height: 80px;
+        padding: 10px;
+        width: 120px;
+        
+        border-radius: 50%;
+    }
+    .carrusel-padre .carrusel-hijo {
+  
+        width: 80%;
+   
+    }
+ 
+    
+}

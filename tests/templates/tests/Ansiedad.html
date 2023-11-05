@@ -1,0 +1,228 @@
+{% extends "TeleMindCareHome/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+    <h1 class="titulo-principal">
+        Test de Ansiedad de Beck
+    </h1>
+    <div id="caja-form">
+        <form id="formAnsiedad" class="dassForm">
+            {% csrf_token %}
+            <div class="preguntas">
+                <span>En el cuestionario hay una lista de síntomas
+                    comunes de la ansiedad. <br>Lea cada uno de los
+                    ítems atentamente, e indique cuanto le ha afectado
+                    en la última semana incluyendo hoy escalas:</span>
+
+                <br><br>
+                <li>0 = En Absoluto</li>
+                <li>1 = Levemente</li>
+                <li>2 = Moderadamente</li>
+                <li>3 = Severamente</li>
+                <br><br>
+
+                <p>1.Torpe o entumecido.</p>
+                <br>
+                <label><input type="radio" name="p1" value="0">0</label>
+                <label><input type="radio" name="p1" value="1">1</label>
+                <label><input type="radio" name="p1" value="2">2</label>
+                <label><input type="radio" name="p1" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>2. Acalorado.</p>
+                <br>
+                <label><input type="radio" name="p2" value="0">0</label>
+                <label><input type="radio" name="p2" value="1">1</label>
+                <label><input type="radio" name="p2" value="2">2</label>
+                <label><input type="radio" name="p2" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>3. Con temblor en las piernas.</p>
+                <br>
+                <label><input type="radio" name="p3" value="0">0</label>
+                <label><input type="radio" name="p3" value="1">1</label>
+                <label><input type="radio" name="p3" value="2">2</label>
+                <label><input type="radio" name="p3" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>4. Incapaz de relajarse.</p>
+                <br>
+                <label><input type="radio" name="p4" value="0">0</label>
+                <label><input type="radio" name="p4" value="1">1</label>
+                <label><input type="radio" name="p4" value="2">2</label>
+                <label><input type="radio" name="p4" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>5. Con temor a que ocurra lo peor</p>
+                <br>
+                <label><input type="radio" name="p5" value="0">0</label>
+                <label><input type="radio" name="p5" value="1">1</label>
+                <label><input type="radio" name="p5" value="2">2</label>
+                <label><input type="radio" name="p5" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>6. Mareado, o que se le va la cabeza.</p>
+                <br>
+                <label><input type="radio" name="p6" value="0">0</label>
+                <label><input type="radio" name="p6" value="1">1</label>
+                <label><input type="radio" name="p6" value="2">2</label>
+                <label><input type="radio" name="p6" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>7. Con latidos del corazon fuertes y acelerados</p>
+                <br>
+                <label><input type="radio" name="p7" value="0">0</label>
+                <label><input type="radio" name="p7" value="1">1</label>
+                <label><input type="radio" name="p7" value="2">2</label>
+                <label><input type="radio" name="p7" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>8. Inestable.</p>
+                <br>
+                <label><input type="radio" name="p8" value="0">0</label>
+                <label><input type="radio" name="p8" value="1">1</label>
+                <label><input type="radio" name="p8" value="2">2</label>
+                <label><input type="radio" name="p8" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>9. Atemorizado o asustado.</p>
+                <br>
+                <label><input type="radio" name="p9" value="0">0</label>
+                <label><input type="radio" name="p9" value="1">1</label>
+                <label><input type="radio" name="p9" value="2">2</label>
+                <label><input type="radio" name="p9" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>10. Nervioso.</p>
+                <br>
+                <label><input type="radio" name="p10" value="0">0</label>
+                <label><input type="radio" name="p10" value="1">1</label>
+                <label><input type="radio" name="p10" value="2">2</label>
+                <label><input type="radio" name="p10" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>11. Con sensación de bloqueo.</p>
+                <br>
+                <label><input type="radio" name="p11" value="0">0</label>
+                <label><input type="radio" name="p11" value="1">1</label>
+                <label><input type="radio" name="p11" value="2">2</label>
+                <label><input type="radio" name="p11" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>12. Con temblores en las manos.</p>
+                <br>
+                <label><input type="radio" name="p12" value="0">0</label>
+                <label><input type="radio" name="p12" value="1">1</label>
+                <label><input type="radio" name="p12" value="2">2</label>
+                <label><input type="radio" name="p12" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>13. Inquieto, inseguro.</p>
+                <br>
+                <label><input type="radio" name="p13" value="0">0</label>
+                <label><input type="radio" name="p13" value="1">1</label>
+                <label><input type="radio" name="p13" value="2">2</label>
+                <label><input type="radio" name="p13" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>14. Con miedo a perder el control.</p>
+                <br>
+                <label><input type="radio" name="p14" value="0">0</label>
+                <label><input type="radio" name="p14" value="1">1</label>
+                <label><input type="radio" name="p14" value="2">2</label>
+                <label><input type="radio" name="p14" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>15. Con sensacion de ahogo</p>
+                <br>
+                <label><input type="radio" name="p15" value="0">0</label>
+                <label><input type="radio" name="p15" value="1">1</label>
+                <label><input type="radio" name="p15" value="2">2</label>
+                <label><input type="radio" name="p15" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>16. Contemor a morir</p>
+                <br>
+                <label><input type="radio" name="p16" value="0">0</label>
+                <label><input type="radio" name="p16" value="1">1</label>
+                <label><input type="radio" name="p16" value="2">2</label>
+                <label><input type="radio" name="p16" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>17. Con miedo.</p>
+                <br>
+                <label><input type="radio" name="p17" value="0">0</label>
+                <label><input type="radio" name="p17" value="1">1</label>
+                <label><input type="radio" name="p17" value="2">2</label>
+                <label><input type="radio" name="p17" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>18. Con problemas digestivos.</p>
+                <br>
+                <label><input type="radio" name="p18" value="0">0</label>
+                <label><input type="radio" name="p18" value="1">1</label>
+                <label><input type="radio" name="p18" value="2">2</label>
+                <label><input type="radio" name="p18" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>19. Con desvanecimientos.</p>
+                <br>
+                <label><input type="radio" name="p19" value="0">0</label>
+                <label><input type="radio" name="p19" value="1">1</label>
+                <label><input type="radio" name="p19" value="2">2</label>
+                <label><input type="radio" name="p19" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>20. Con rubor facial.</p>
+                <br>
+                <label><input type="radio" name="p20" value="0">0</label>
+                <label><input type="radio" name="p20" value="1">1</label>
+                <label><input type="radio" name="p20" value="2">2</label>
+                <label><input type="radio" name="p20" value="3">3</label>
+            </div>
+
+            <div class="preguntas">
+                <p>21. Con sudores, frios o calientes</p>
+                <br>
+                <label><input type="radio" name="p21" value="0">0</label>
+                <label><input type="radio" name="p21" value="1">1</label>
+                <label><input type="radio" name="p21" value="2">2</label>
+                <label><input type="radio" name="p21" value="3">3</label>
+            </div>
+
+            <br><br>
+            <div id="btn-enviar">
+                <input type="submit" value="Enviar">
+            </div>
+
+        </form>
+    </div>
+
+    <div id="caja-resultados" class="caja-resultados-estilos">
+
+    </div>
+
+{% endblock %}

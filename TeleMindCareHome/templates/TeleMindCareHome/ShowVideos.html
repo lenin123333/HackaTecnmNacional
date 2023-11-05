@@ -1,0 +1,171 @@
+{% extends "TeleMindCareHome/base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    
+
+ 
+
+    .message {
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .user-message {
+        background-color: #4CAF50;
+        color: #fff;
+        
+    }
+
+    .bot-message {
+        background-color: #2196F3;
+        color: #fff;
+    }
+
+    .vistavideom {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    .boton-respuestaV {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+</style>
+
+<div class="container-video">
+    <!-- Sección de subida de vídeo -->
+    <div id="upload-section">
+        <h3>Hola, este espacio es tuyo</h3>
+        <p>¿Quieres crear un nuevo vídeo?</p>
+        <!--<input type="file" id="videoFile" accept="video/*">-->
+        <a class="boton-vistagrafica" href="{% url 'Analizador' %}">Cargar nuevo video</a>
+    </div>
+
+    <!-- Sección de mensajería -->
+   
+        
+    <div id="messaging-section">
+        <h3>Lily te a dejado un comentario</h3>
+            <div class="message user-message">
+                <p id="comentario">{{ emociones_usuario.0.comentario }}</p>
+            </div>
+    
+           
+            <a class="boton-respuestaV" href="#" id="seguirPlatica">Seguir Platica</a>
+
+    </div>
+  
+    
+</div>
+<!-- Sección de previsualización de videos -->
+<div id="videoCarousel">
+    <button class="carousel-button left" id="prevVideo"> < </button>
+       
+            <p id="videoDate">00/00/2023</p>
+            <video controls id="videoPlayer">
+                <!-- Aquí se agregarán los videos mediante JavaScript -->
+            </video>
+            <button class="carousel-button right" id="nextVideo"> > </button>
+           
+               
+            <div class="boton-mostrar-grafica">
+                
+                <a href="#" class="graphLink" style="display: none;">Ver Grafica</a>
+                {% for emocion in emociones_usuario %}
+                <a href="{% url 'mostrar_graficas' emociones_id=emocion.id %}" class="graphLink"
+                    style="display: none;">Ver Grafica</a>
+                {% endfor %}
+            </div>
+
+</div>
+
+
+<script>
+    var videos = [];
+
+    {% if emociones_usuario %}
+    {% for emocion in emociones_usuario %}
+    videos.push({
+        path: "{% static 'TeleMindCareHome/videos/' %}{{ request.user.username }}/{{ emocion.nombre_video }}",
+        id_grafica: "{{ emocion.id }}",
+        fecha_creacion: "{{ emocion.fecha_creacion }}",
+        comentario:"{{ emocion.comentario }}"
+
+    });
+    {% endfor %}
+    {% endif %}
+
+    var currentIndex = 0;
+    var videoElement = document.getElementById('videoPlayer');
+    var videoDateElement = document.getElementById('videoDate');
+    var graphLinkElements = document.getElementsByClassName('graphLink');
+
+    function showVideo(index) {
+        var videoPath = videos[index].path;
+        var fecha = obtenerFecha(videoPath);
+        var comentario = videos[index].comentario;
+    
+        videoElement.src = videoPath;
+        videoDateElement.textContent = "Fecha: " + fecha;
+        document.getElementById('comentario').textContent = comentario;
+    
+        // Ocultar todos los enlaces de gráfica
+        Array.from(graphLinkElements).forEach(function (link) {
+            link.style.display = 'none';
+        });
+    
+        // Mostrar el enlace correspondiente al video actual
+        if (videos[index].id_grafica) {
+            graphLinkElements[index + 1].style.display = 'flex';  // index + 1 para saltar el primer enlace que es para el primer video
+        }
+    }
+    
+    function obtenerFecha(videoPath) {
+        // Lógica para obtener la fecha del nombre del video
+        // Si tienes la fecha en el formato deseado en la variable fecha_creacion, puedes usarla directamente
+        // O, si prefieres, puedes utilizar la lógica anterior para extraer la fecha del nombre del video
+        return videos[currentIndex].fecha_creacion;
+    }
+
+    // Muestra el primer video al cargar la página
+    showVideo(currentIndex);
+
+    // Manejadores de eventos para cambiar de video
+    document.getElementById('prevVideo').addEventListener('click', function () {
+        currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+        showVideo(currentIndex);
+    });
+
+    document.getElementById('nextVideo').addEventListener('click', function () {
+        currentIndex = (currentIndex + 1) % videos.length;
+        showVideo(currentIndex);
+    });
+
+    document.getElementById('seguirPlatica').addEventListener('click', function () {
+        var comentario = document.getElementById('comentario').textContent;
+        var url = "{% url 'chatTeleMindCareVar' %}?preguntar=" + encodeURIComponent(comentario);
+        
+        // Redirigir a la URL construida
+        window.location.href = url;
+    });
+    
+    
+</script>
+
+
+
+
+{% endblock %}

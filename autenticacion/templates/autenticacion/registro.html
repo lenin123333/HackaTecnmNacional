@@ -1,0 +1,115 @@
+{% extends "TeleMindCareHome/base.html" %}
+{% load static %}
+{% block content %}
+
+
+<br><br><br><br><br>
+<main class="contenedor-login">
+    <div class="contenedor__todo">
+        <div class="caja__trasera">
+            <div class="caja__trasera-login">
+
+                <p>Inicia sesión para entrar en la página</p>
+                <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+            </div>
+            <div class="caja__trasera-register">
+                <h3>¡Regístrate!</h3>
+                <h4></h4>
+                <p>Regístrate para que puedas iniciar sesión</p>
+                <a href="{% url 'Login' %}">
+                    <button id="btn__registrarse">Iniciar Sesion</button>
+                </a>
+
+            </div>
+        </div>
+
+        <!--Formulario de Login y registro-->
+        <div class="contenedor__login-register">
+            <form method="post" action="{% url 'Register' %}" class="formulario__login">
+                {% csrf_token %}
+                <h2>Registrarse</h2>
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="Nombre de usuario" class="form-control {% if form.username.errors %}is-invalid{% endif %}" value="{{ form.username.value|default:'' }}">
+                    {% if form.username.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+               
+                <div class="form-group">
+                   
+                    <input type="text" name="nombre" placeholder="Nombre" class="form-control {% if form.nombre.errors %}is-invalid{% endif %}" value="{{ form.nombre.value|default:'' }}">
+
+                    {% if form.nombre.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.nombre.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    
+                    <input type="text" name="apellido" placeholder="Apellido" class="form-control {% if form.apellido.errors %}is-invalid{% endif %}" value="{{ form.apellido.value|default:'' }}">
+                    {% if form.apellido.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.apellido.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    
+                    <input type="number" name="numero_telefono" placeholder="Número de teléfono" class="form-control {% if form.numero_telefono.errors %}is-invalid{% endif %}" value="{{ form.numero_telefono.value|default:'' }}">
+                    {% if form.numero_telefono.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.numero_telefono.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    
+                    <input type="email" name="correo_electronico" placeholder="Correo Electrónico" class="form-control {% if form.correo_electronico.errors %}is-invalid{% endif %}" value="{{ form.correo_electronico.value|default:'' }}">
+                    {% if form.correo_electronico.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.correo_electronico.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    
+                    <input type="password" name="password" placeholder="Contraseña" class="form-control {% if form.password.errors %}is-invalid{% endif %}">
+                    {% if form.password.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <button type="submit">Registrarse</button>
+                <br><br>
+                <br><br>
+                <a class="btnRegistrarse-page"   href="{% url 'Login' %}">
+                    ¿Ya tienes cuenta? Inicia Sesión
+                </a>
+            </form>
+            
+            
+
+        
+        </div>
+    </div>
+
+</main>
+<!--
+        <script src="assets/js/script.js"></script>-->
+{% endblock %}

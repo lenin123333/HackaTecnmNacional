@@ -1,0 +1,87 @@
+{% extends "TeleMindCareHome/base.html" %}
+{% load static %}
+{% block content %}
+<h1 class="titulo-principal">Interacción con la IA</h1>
+
+
+<main id="contenedor_tarea">
+    <div>
+        <form action="{% url 'cargar_video' %}" method="POST" enctype="multipart/form-data" id="videoIA">
+            {% csrf_token %}
+            <div>
+                <input type="file" name="video" id="videoInput" accept="video/*" onchange="mostrarVideo()">
+            </div>
+            <div>
+                <input type="submit" value="Enviar" id="enviar">
+            </div>
+            
+        </form>
+    </div>
+   
+  
+    <div id="contenedor_video" style="display: none;">
+        <video width="400" controls id="videoPlayer"  >
+            Tu navegador no soporta el tag de video.
+        </video>
+    </div>
+   
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        function mostrarVideo() {
+            const videoInput = document.getElementById('videoInput');
+            const contenedorVideo = document.getElementById('contenedor_video');
+    
+            // Obtener el archivo seleccionado
+            const archivo = videoInput.files[0];
+    
+            if (archivo) {
+                // Crear una URL del objeto Blob del archivo
+                const url = URL.createObjectURL(archivo);
+    
+                // Actualizar la fuente del elemento de video
+                document.getElementById('videoPlayer').src = url;
+    
+                // Mostrar el contenedor de video
+                contenedorVideo.style.display = 'block';
+                return true
+            }else{
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'No has seleccionado un video',
+                })
+
+                return false;
+            }
+        }
+    
+        document.getElementById('videoIA').addEventListener('submit', function (event) {
+            // Prevenir el envío del formulario por defecto
+            event.preventDefault();
+    
+            // Llamar a mostrarVideo() antes de enviar el formulario
+            if(mostrarVideo()){
+                Swal.fire({
+                    title: 'Video enviado',
+                    text: 'Tu video está siendo analizado. Recibirás un correo cuando el análisis esté completo.',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 3000, // 3 segundos
+                    timerProgressBar: true,
+                    willClose: () => {
+                        // Después de 3 segundos, envía el formulario manualmente
+                        event.target.submit();
+                    }
+                });
+            }
+            
+    
+            // Mostrar la alerta con SweetAlert2
+            
+        });
+    </script>
+</main>
+    
+{% endblock %}
